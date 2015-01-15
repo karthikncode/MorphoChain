@@ -1,0 +1,13 @@
+##############################
+Author: Karthik Narasimhan
+This file contains details about the various formats of the input files for the code.
+##############################
+
+1. Wordlist (Train) - The wordlist consists of one word per line in the following format: <word> <freq>
+   Check the file data/wordlist.sample for an example.
+
+2. Gold Segmentations (Test) - The gold segmentations are one per line: <word>:<segmentation>
+   See data/goldSeg.sample for an example.
+
+3. Word Vectors - The vectors are also one per line, with the word followed by the vector (all separated by spaces): <word> <dim1> <dim2> ... <dimN>
+    See data/vectors.sample for an example.

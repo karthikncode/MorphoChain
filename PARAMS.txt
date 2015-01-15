@@ -1,0 +1,7 @@
+##############################
+Author: Karthik Narasimhan
+This file contains details about the various parameters in the model and how to set them appropriately.
+##############################
+
+TODO
+
