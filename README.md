@@ -16,6 +16,8 @@ You can clone the repository and use the *production* branch (default) for the l
 
 Coming soon.
 
+You can also directly import the entire directory into IntelliJ or Eclipse and compile using the GUI.
+
 ### Sample Usage ###
 
 Here is an example of how to run the code from the home directory of the project. The output will contain the predicted segmentations for all the words in the test file. If you do not have gold segmentations
@@ -29,6 +31,8 @@ java -ea  -Djava.library.path=lib/ -classpath "./lib/*:./out/production/Morpholo
 ### Configuration ###
 Most parameters in the model can be changed in the file params.properties
 
+### Word Vectors ###
+A good tool to produce your own vectors from a raw corpus is [word2vec](https://code.google.com/p/word2vec/). You can also use any pre-existing vectors as long as they satisfy the format as specified in FORMATS.txt.
 
 ### Contact ###
 This code is maintained by Karthik Narasimhan (karthikn@csail.mit.edu). Please use the issue tracker or contact me if you have any questions/suggestions.
