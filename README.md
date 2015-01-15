@@ -6,7 +6,7 @@
 * Model consistently outperforms three state-of-the-art baselines on the task of morphological segmentation on Arabic, English and Turkish.
 
 ### Download ###
-You can clone the repository and use the *production* branch (default) for the latest code.
+You can clone the repository and use the *production2* branch (default) for the latest code.
 
 ### Dependencies ###
   1. This project uses the LBFGS-B algorithm for optimization (the jar files for the library are included in lib/). We, however, recommend you to download and install the lbfgsb_wrapper for Java from [here](https://github.com/mkobos/lbfgsb_wrapper) since there may be additional steps for you to take for installing on Mac OSX. At the end of the install, move the files *lbfgsb_wrapper-<version>.jar* and *liblbfgsb_wrapper.so* (or *liblbfgsb_wrapper.dylib* on OSX) into the lib/ directory.
