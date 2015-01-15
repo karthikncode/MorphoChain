@@ -14,6 +14,8 @@ You can clone the repository and use the *production* branch (default) for the l
 
 ### How to Compile ###
 
+Coming soon.
+
 ### Sample Usage ###
 
 Here is an example of how to run the code from the home directory of the project. The output will contain the predicted segmentations for all the words in the test file. If you do not have gold segmentations
