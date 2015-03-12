@@ -153,8 +153,7 @@ public class MorphoChain {
 
                 //inductive mode
                 if(INDUCTIVE)
-//                    if(!word2Cnt.containsKey(word))
-                        word2Cnt.put(word, MorphoChain.FREQ_THRESHOLD+1);
+                    word2Cnt.put(word, MorphoChain.FREQ_THRESHOLD+1);
 
 
                 line = br.readLine();
@@ -243,7 +242,7 @@ public class MorphoChain {
             affix = word.substring(parent.length());
             if (affix.length() > MAX_AFFIX_LENGTH || !suffixes.contains(affix)) affix = "UNK";
             if(!affix.equals("UNK")) {
-                Tools.addFeature(features, inVocab + "SUFFIX_" + affix, 1.);// + "_" +(int)(10*cosine), cosine);
+                Tools.addFeature(features, inVocab + "SUFFIX_" + affix, 1.);
             }
 
             if(AFFIX_NEIGHBORS && suffixNeighbor.containsKey(affix)) {
@@ -366,7 +365,7 @@ public class MorphoChain {
             affix = word.substring(0, word.length() - parent.length());
             if(affix.length() > MAX_AFFIX_LENGTH || !prefixes.contains(affix)) affix = "UNK";
             if(!affix.equals("UNK")) {
-                Tools.addFeature(features, inVocab + "PREFIX_" + affix, 1);// + "_" +(int)(10*cosine), cosine);
+                Tools.addFeature(features, inVocab + "PREFIX_" + affix, 1);
             }
 
             if(AFFIX_NEIGHBORS && prefixNeighbor.containsKey(affix)) {
