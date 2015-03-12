@@ -37,4 +37,4 @@ Most parameters in the model can be changed in the file params.properties
 A good tool to produce your own vectors from a raw corpus is [word2vec](https://code.google.com/p/word2vec/). You can also use any pre-existing vectors as long as they satisfy the format as specified in FORMATS.txt.
 
 ### Contact ###
-This code is maintained by Karthik Narasimhan (karthikn@csail.mit.edu). Please use the issue tracker or contact me if you have any questions/suggestions.
+Please use the issue tracker or email me if you have any questions/suggestions.
