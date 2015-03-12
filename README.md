@@ -1,6 +1,6 @@
 # MorphoChain #
 
-### Unsupervised Discovery of Morphological Chains (in review) ###
+### Unsupervised Discovery of Morphological Chains [TACL 2015](https://tacl2013.cs.columbia.edu/ojs/index.php/tacl/article/view/458) ###
 
 * A model for unsupervised morphological analysis that integrates orthographic and semantic views of words.
 * Model consistently outperforms three state-of-the-art baselines on the task of morphological segmentation on Arabic, English and Turkish.
