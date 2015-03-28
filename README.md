@@ -14,7 +14,7 @@ You can clone the repository and use the *production2* branch (default) for the 
   1. This project uses the LBFGS-B algorithm for optimization (the jar files for the library are included in lib/). We, however, recommend you to download and install the lbfgsb_wrapper for Java from [here](https://github.com/mkobos/lbfgsb_wrapper) since there may be additional steps for you to take for installing on Mac OSX. At the end of the install, move the files *lbfgsb_wrapper-<version>.jar* and *liblbfgsb_wrapper.so* (or *liblbfgsb_wrapper.dylib* on OSX) into the lib/ directory.
   2. *commons-lang3-3.3.2.jar* (included in lib/)
 
-### How to Compile ###
+### Compile ###
 
 Use 'ant all' to compile on the terminal (requires ant version > 1.6).
 You can also directly import the entire directory into IntelliJ or Eclipse and compile using the GUI.
