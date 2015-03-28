@@ -16,8 +16,7 @@ You can clone the repository and use the *production2* branch (default) for the 
 
 ### How to Compile ###
 
-On the Terminal: Coming soon.
-
+Use 'ant all' to compile on the terminal (requires ant version > 1.6).
 You can also directly import the entire directory into IntelliJ or Eclipse and compile using the GUI.
 
 ### Sample Usage ###

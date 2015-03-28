@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String [] args) throws IOException, InterruptedException, LBFGSBException {
 
-        rn.setSeed(10);
+        rn.setSeed(1);
         Properties prop = new Properties();
         InputStream input = null;
         String paramsFile;

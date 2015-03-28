@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_morphology" default="compile.module.morphology">
+  <dirname property="module.morphology.basedir" file="${ant.file.module_morphology}"/>
+  
+  <property name="module.jdk.home.morphology" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.morphology" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.morphology" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.morphology" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="morphology.output.dir" value="${module.morphology.basedir}/out/production/Morphology"/>
+  <property name="morphology.testoutput.dir" value="${module.morphology.basedir}/out/test/Morphology"/>
+  
+  <path id="morphology.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="morphology.module.production.classpath">
+    <path refid="${module.jdk.classpath.morphology}"/>
+    <path refid="library.com.google.guava:guava:14.0.1.classpath"/>
+    <path refid="library.lbfgsb_wrapper-1.1.classpath"/>
+    <path refid="library.junit:junit:4.8.1.classpath"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.jheatchart-0.6.classpath"/>
+    <path refid="library.jcommon-1.0.22.classpath"/>
+    <path refid="library.jfreechart-1.0.18.classpath"/>
+  </path>
+  
+  <path id="morphology.runtime.production.module.classpath">
+    <pathelement location="${morphology.output.dir}"/>
+    <path refid="library.com.google.guava:guava:14.0.1.classpath"/>
+    <path refid="library.lbfgsb_wrapper-1.1.classpath"/>
+    <path refid="library.junit:junit:4.8.1.classpath"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.jheatchart-0.6.classpath"/>
+    <path refid="library.jcommon-1.0.22.classpath"/>
+    <path refid="library.jfreechart-1.0.18.classpath"/>
+  </path>
+  
+  <path id="morphology.module.classpath">
+    <path refid="${module.jdk.classpath.morphology}"/>
+    <pathelement location="${morphology.output.dir}"/>
+    <path refid="library.com.google.guava:guava:14.0.1.classpath"/>
+    <path refid="library.lbfgsb_wrapper-1.1.classpath"/>
+    <path refid="library.junit:junit:4.8.1.classpath"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.jheatchart-0.6.classpath"/>
+    <path refid="library.jcommon-1.0.22.classpath"/>
+    <path refid="library.jfreechart-1.0.18.classpath"/>
+  </path>
+  
+  <path id="morphology.runtime.module.classpath">
+    <pathelement location="${morphology.testoutput.dir}"/>
+    <pathelement location="${morphology.output.dir}"/>
+    <path refid="library.com.google.guava:guava:14.0.1.classpath"/>
+    <path refid="library.lbfgsb_wrapper-1.1.classpath"/>
+    <path refid="library.junit:junit:4.8.1.classpath"/>
+    <path refid="library.org.apache.commons:commons-lang3:3.3.2.classpath"/>
+    <path refid="library.jheatchart-0.6.classpath"/>
+    <path refid="library.jcommon-1.0.22.classpath"/>
+    <path refid="library.jfreechart-1.0.18.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.morphology">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.morphology">
+    <patternset refid="excluded.from.module.morphology"/>
+  </patternset>
+  
+  <path id="morphology.module.sourcepath">
+    <dirset dir="${module.morphology.basedir}">
+      <include name="src"/>
+    </dirset>
+    <dirset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src">
+      <include name="test"/>
+      <include name="src"/>
+      <include name="raw_wrapper/dist/src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.morphology" depends="compile.module.morphology.production,compile.module.morphology.tests" description="Compile module Morphology"/>
+  
+  <target name="compile.module.morphology.production" description="Compile module Morphology; production classes">
+    <mkdir dir="${morphology.output.dir}"/>
+    <javac destdir="${morphology.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.morphology}/javac">
+      <compilerarg line="${compiler.args.morphology}"/>
+      <bootclasspath refid="morphology.module.bootclasspath"/>
+      <classpath refid="morphology.module.production.classpath"/>
+      <src refid="morphology.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.morphology"/>
+    </javac>
+    
+    <copy todir="${morphology.output.dir}">
+      <fileset dir="${module.morphology.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/raw_wrapper/dist/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.morphology.tests" depends="compile.module.morphology.production" description="compile module Morphology; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.morphology" description="cleanup module">
+    <delete dir="${morphology.output.dir}"/>
+    <delete dir="${morphology.testoutput.dir}"/>
+  </target>
+</project>
