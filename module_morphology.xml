@@ -74,7 +74,7 @@
     <dirset dir="${module.morphology.basedir}">
       <include name="src"/>
     </dirset>
-    <dirset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src">
+    <dirset dir="${module.morphology.basedir}/lib/lbfgsb_wrapper-1.1.2-src">
       <include name="test"/>
       <include name="src"/>
       <include name="raw_wrapper/dist/src"/>
@@ -99,15 +99,15 @@
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
-      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/test">
+      <fileset dir="${module.morphology.basedir}/lib/lbfgsb_wrapper-1.1.2-src/test">
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
-      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/src">
+      <fileset dir="${module.morphology.basedir}/lib/lbfgsb_wrapper-1.1.2-src/src">
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
-      <fileset dir="${module.morphology.basedir}/../../tools/lbfgsb_wrapper-1.1.2-src/raw_wrapper/dist/src">
+      <fileset dir="${module.morphology.basedir}/lib/lbfgsb_wrapper-1.1.2-src/raw_wrapper/dist/src">
         <patternset refid="compiler.resources"/>
         <type type="file"/>
       </fileset>
