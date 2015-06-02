@@ -120,7 +120,7 @@
   </path>
   
   <path id="library.lbfgsb_wrapper-1.1.classpath">
-    <pathelement location="${basedir}/../../tools/lbfgsb_wrapper-1.1.2-src"/>
+    <pathelement location="${basedir}/lib/lbfgsb_wrapper-1.1.2.jar"/>
   </path>
   
   <path id="library.org.apache.commons:commons-lang3:3.3.2.classpath">
