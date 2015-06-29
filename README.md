@@ -12,7 +12,7 @@ You can clone the repository and use the *production2* branch (default) for the 
 
 ### Dependencies (before Compiling) ###
   1. This project uses the LBFGS-B algorithm for optimization (the jar files for the library are included in lib/). We, however, recommend you to download and install the lbfgsb_wrapper for Java from [here](https://github.com/mkobos/lbfgsb_wrapper) since there may be additional steps for you to take for installing on Mac OSX. At the end of the install, move the files *lbfgsb_wrapper-<version>.jar* and *liblbfgsb_wrapper.so* (or *liblbfgsb_wrapper.dylib* on OSX) into the lib/ directory.
-  2. *commons-lang3-3.3.2.jar* (included in lib/)
+  2. External library: *commons-lang3-3.3.2.jar* (included in lib/)
   3. Install the Junit framework following instructions in http://junit.org/ or using Maven.
   4. Replace the path for `jdk.home.1.7` in the `build.properties` file with your local install.
   5. (optional) Change `path.variable.maven_repository` in `build.properties` to your local maven repository if you wish to use your Maven installs.
