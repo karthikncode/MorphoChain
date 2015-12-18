@@ -73,10 +73,13 @@ public class Evaluate {
 
         }
         System.out.println("Done.");
-        System.out.println("Incorrect Segmentations");
+        System.out.println("\nIncorrect Segmentations");
         printSegmentations(incorrectSegmentations);
-        System.out.println("Correct Segmentations");
+        System.out.println("\nCorrect Segmentations");
         printSegmentations(correctSegmentations);
+
+        System.out.println("\nAll Segmentations");
+        printSegmentations(predictedSegmentations);
 
         double precision = correct/predTotal, recall = correct/goldTotal;
         double f1 = (2*precision*recall)/(precision+recall);

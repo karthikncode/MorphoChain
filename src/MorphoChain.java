@@ -148,7 +148,6 @@ public class MorphoChain {
                 ArrayList<String> segmentations = new ArrayList<String>();
                 for(int i=1;i<parts.length; i++)
                     segmentations.add(parts[i]);
-                goldSegmentations.put(word, segmentations);
                 goldSegs.add(new MutablePair<String, ArrayList<String>>(word, segmentations));
 
                 //inductive mode
@@ -408,7 +407,7 @@ public class MorphoChain {
 
 
         //max dot feature
-        if(DOT) {
+        if(DOT && word.length() >= 2) {
             double maxDot = word2MaxDot.get(word);
             Tools.addFeature(features, "STP_COS_" + (int) (10 * maxDot), 1.);
         }
