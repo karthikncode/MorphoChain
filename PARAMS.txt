@@ -3,5 +3,4 @@ Author: Karthik Narasimhan
 This file contains details about the various parameters in the model and how to set them appropriately.
 ##############################
 
-TODO
-
+You should mostly need to only change FREQ_THRESHOLD to prune words from the word list below a certain frequency, and TOP_AFFIX_SELECT and AFFIX_FREQ_THRESHOLD, which are the number of auto-generated affix candidates and a threshold for the frequency of the words in the word list to generate them from. MIN_SEG_LENGTH is for the minimum length of a morpheme.
