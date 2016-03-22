@@ -152,7 +152,7 @@ public class MorphoChain {
                 goldSegs.add(new MutablePair<String, ArrayList<String>>(word, segmentations));
 
                 //inductive mode
-                if(INDUCTIVE)
+                if(INDUCTIVE && !word2Cnt.containsKey(word))
                     word2Cnt.put(word, MorphoChain.FREQ_THRESHOLD+1);
 
 
@@ -653,15 +653,15 @@ public class MorphoChain {
 
         if(word.contains("'")) {
             String [] parts = word.split("'");
-            assert parts.length<=2; //just a check
+//            assert parts.length<=2; //just a check
             String suffix = "'";
-            if (parts.length==2)
-                suffix += parts[1];
+//            if (parts.length==2)
+            suffix += parts[parts.length-1];
             if(suffixes.contains(suffix))
                 Tools.incrementMap(suffixDist, suffix);
-            String seg = segment(parts[0])+"-";
+            String seg = segment(parts[0]);
             for(int i=1;i<parts.length; i++)
-                seg += ("'"+parts[i]);
+                seg += ("-'"+segment(parts[i]));
             return seg;
         }
 
