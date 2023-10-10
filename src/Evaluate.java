@@ -66,7 +66,7 @@ public class Evaluate {
 
             correct += retValues[0];goldTotal += retValues[1];predTotal += retValues[2];
             predictedSegmentations.put(entry.getKey(), predSeg);
-            if(retValues[1] != retValues[2])
+            if(retValues[0] != retValues[1])
                 incorrectSegmentations.put(entry.getKey(), predSeg+" : "+entry.getValue());
             else
                 correctSegmentations.put(entry.getKey(), predSeg+" : "+entry.getValue());
